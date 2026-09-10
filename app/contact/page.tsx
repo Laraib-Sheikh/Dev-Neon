@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 
-// headre
+
 
 export default function ContactPage() {
   return (
