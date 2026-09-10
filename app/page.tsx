@@ -115,9 +115,9 @@ export default function Home() {
           <Reveal>
             <div className="flex items-end justify-between mb-12 gap-6">
               <div>
-                <TagLabel>featured work</TagLabel>
-                <h2 className="font-display text-3xl sm:text-4xl font-semibold max-w-[20ch]">
-                  Products we&apos;ve shaped.
+                <TagLabel>recent projects</TagLabel>
+                <h2 className="font-display text-3xl sm:text-4xl font-semibold max-w-[22ch]">
+                  Products we&apos;ve shipped recently.
                 </h2>
               </div>
               <Link
@@ -133,18 +133,29 @@ export default function Home() {
           </Reveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {caseStudies.slice(0, 3).map((s, i) => (
-              <Reveal key={s.slug} delay={i * 80}>
-                <CaseStudyCard study={s} index={i} />
-              </Reveal>
-            ))}
+            {caseStudies
+              .filter((s) => s.recent)
+              .map((s, i) => (
+                <Reveal key={s.slug} delay={i * 80}>
+                  <CaseStudyCard study={s} index={i} />
+                </Reveal>
+              ))}
           </div>
 
           <Reveal delay={200}>
-            <div className="mt-8 grid md:grid-cols-2 gap-6">
-              {caseStudies.slice(3).map((s, i) => (
-                <CaseStudyCard key={s.slug} study={s} index={i + 3} />
-              ))}
+            <div className="mt-14 mb-8">
+              <TagLabel>more work</TagLabel>
+              <h3 className="font-display text-2xl font-semibold">
+                Selected concepts & platforms.
+              </h3>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {caseStudies
+                .filter((s) => !s.recent)
+                .slice(0, 3)
+                .map((s, i) => (
+                  <CaseStudyCard key={s.slug} study={s} index={i + 3} />
+                ))}
             </div>
           </Reveal>
         </div>

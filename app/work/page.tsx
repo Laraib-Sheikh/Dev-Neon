@@ -15,24 +15,41 @@ export default function WorkPage() {
       <Reveal>
         <TagLabel>work</TagLabel>
         <h1 className="font-display text-4xl sm:text-5xl font-semibold max-w-[18ch] leading-[1.1] mb-6">
-          Our featured work.
+          Recent projects & selected work.
         </h1>
         <p className="text-lg text-soft max-w-[52ch] leading-relaxed mb-14">
-          Projects marked{" "}
+          Recent builds include live product screens. Items marked{" "}
           <span className="font-mono text-xs text-rust border border-rust/30 bg-rust-soft px-1.5 py-0.5 rounded">
             concept
           </span>{" "}
-          are Dev Neon-built demos — a look at how we&apos;d approach the
-          problem end to end.
+          are Dev Neon demos showing how we&apos;d approach a problem.
         </p>
       </Reveal>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {caseStudies.map((s, i) => (
-          <Reveal key={s.slug} delay={i * 60}>
-            <CaseStudyCard study={s} index={i} />
-          </Reveal>
-        ))}
+      <div className="mb-10">
+        <h2 className="font-display text-xl font-semibold mb-5">Recent</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {caseStudies
+            .filter((s) => s.recent)
+            .map((s, i) => (
+              <Reveal key={s.slug} delay={i * 60}>
+                <CaseStudyCard study={s} index={i} />
+              </Reveal>
+            ))}
+        </div>
+      </div>
+
+      <div>
+        <h2 className="font-display text-xl font-semibold mb-5">More work</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {caseStudies
+            .filter((s) => !s.recent)
+            .map((s, i) => (
+              <Reveal key={s.slug} delay={i * 60}>
+                <CaseStudyCard study={s} index={i + 3} />
+              </Reveal>
+            ))}
+        </div>
       </div>
     </section>
   );

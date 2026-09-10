@@ -8,7 +8,10 @@ export type CaseStudy = {
   tech: string[];
   result: string;
   concept: boolean;
+  recent?: boolean;
   features?: string[];
+  images?: string[];
+  liveUrl?: string;
 };
 
 export const services = [
@@ -220,6 +223,93 @@ export const techStack = {
 };
 
 export const caseStudies: CaseStudy[] = [
+  {
+    slug: "orbit-pm",
+    name: "Orbit PM",
+    category: "SaaS · Project Management",
+    summary:
+      "A project command center for teams — tasks, boards, insights, and collaboration in one workspace.",
+    problem:
+      "Teams often juggle scattered tools for tasks, assignees, estimates, and collaboration. Without a clear command center, priorities slip and ownership gets blurry.",
+    solution:
+      "We built Orbit PM as a full workspace with task creation, board and list views, priority and status tracking, estimates, tags, team directory, roles, and invitations — designed for clear day-to-day execution.",
+    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Auth"],
+    result:
+      "A polished SaaS dashboard where teams can plan work, track progress, and manage collaborators from a single product surface.",
+    concept: false,
+    recent: true,
+    liveUrl: undefined,
+    images: ["/work/orbit-pm-1.png", "/work/orbit-pm-2.png"],
+    features: [
+      "Task creation & estimates",
+      "Board and list views",
+      "Priority & status workflows",
+      "Team directory & roles",
+      "Invitations & shared access",
+      "Workspace metrics",
+    ],
+  },
+  {
+    slug: "neonnotes",
+    name: "NeonNotes",
+    category: "SaaS · Productivity",
+    summary:
+      "A neon-themed productivity app for notes, reminders, tags, and account management — dark, fast, and focused.",
+    problem:
+      "Most note apps feel generic. Users want a distinctive product that still covers the full loop: secure auth, notes, reminders, organization, and account controls.",
+    solution:
+      "NeonNotes delivers a cohesive dark UI with secure login/signup, dashboard metrics, notes, reminders with quick-add, tags, system search, and settings — including profile and session management.",
+    tech: ["React", "Next.js", "Vercel", "Auth", "Tailwind CSS"],
+    result:
+      "A distinctive productivity product with a complete auth-to-dashboard experience and a memorable neon visual system.",
+    concept: false,
+    recent: true,
+    liveUrl: "https://daily-life-seven.vercel.app",
+    images: [
+      "/work/neonnotes-1.png",
+      "/work/neonnotes-2.png",
+      "/work/neonnotes-3.png",
+      "/work/neonnotes-4.png",
+      "/work/neonnotes-5.png",
+      "/work/neonnotes-6.png",
+    ],
+    features: [
+      "Secure login & registration",
+      "Notes dashboard",
+      "Reminders & quick add",
+      "Tags management",
+      "System search",
+      "Account settings",
+    ],
+  },
+  {
+    slug: "whats-for-dinner",
+    name: "What's for Dinner",
+    category: "AI · Consumer",
+    summary:
+      "An AI-powered recipe matching platform that turns pantry ingredients into meals and reduces food waste.",
+    problem:
+      "Home cooks waste ingredients because they don't know what to cook with what's already in the fridge. Generic recipe sites ignore pantry reality.",
+    solution:
+      "We designed and built a warm, lifestyle-led product with organic AI matching, pantry-aware recipe discovery, meal planning, shopping, leftovers, favorites, and a calm sign-in experience.",
+    tech: ["React", "Next.js", "AI matching", "Auth", "Tailwind CSS"],
+    result:
+      "A polished consumer SaaS experience that helps people cook from what they already have — with clear flows from landing to sign-in and daily inspiration.",
+    concept: false,
+    recent: true,
+    images: [
+      "/work/whats-for-dinner-1.png",
+      "/work/whats-for-dinner-2.png",
+    ],
+    features: [
+      "AI pantry matching",
+      "Recipe discovery",
+      "Meal planning",
+      "Shopping & leftovers",
+      "Favorites",
+      "Auth & social sign-in",
+    ],
+  },
   {
     slug: "ai-healthcare-platform",
     name: "AI Healthcare Platform",
