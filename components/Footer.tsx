@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   return (
@@ -7,8 +7,8 @@ export default function Footer() {
       <div className="max-w-wrap mx-auto px-6 py-16">
         <div className="grid md:grid-cols-[1.3fr_1fr_1fr_1fr] gap-12">
           <div>
-            <div className="flex items-center gap-2.5 mb-4">
-              <Image src="/logo.png" alt="Dev Neon" width={28} height={28} className="rounded-[6px]" />
+            <div className="flex items-center gap-3 mb-4">
+              <Logo size={32} variant="onDark" className="shrink-0" />
               <span className="font-display font-semibold">Dev Neon</span>
             </div>
             <p className="text-sm text-paper/65 max-w-[28ch] leading-relaxed">

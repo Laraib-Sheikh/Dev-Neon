@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Logo from "@/components/Logo";
 
 const links = [
   { href: "/services", label: "Services" },
@@ -19,9 +19,17 @@ export default function Navbar() {
   return (
     <header className="border-b hairline sticky top-0 z-40 bg-paper/85 backdrop-blur-md">
       <div className="max-w-wrap mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 group" onClick={() => setOpen(false)}>
-          <Image src="/logo.png" alt="Dev Neon" width={30} height={30} className="rounded-[7px] transition-transform group-hover:scale-105" />
-          <span className="font-display font-semibold text-[1.05rem] tracking-tight">
+        <Link
+          href="/"
+          className="flex items-center gap-3 group"
+          onClick={() => setOpen(false)}
+          aria-label="Dev Neon home"
+        >
+          <Logo
+            size={34}
+            className="shrink-0 transition-transform duration-300 group-hover:scale-105"
+          />
+          <span className="font-display font-semibold text-[1.1rem] tracking-tight">
             Dev Neon
           </span>
         </Link>
